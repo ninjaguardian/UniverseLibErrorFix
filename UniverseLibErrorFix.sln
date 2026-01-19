@@ -1,0 +1,28 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36408.4
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniverseLibErrorFix", "UniverseLibErrorFix\UniverseLibErrorFix.csproj", "{AA326492-8C5A-4706-8C1C-82B3F8D750FE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+		ReleaseAndSave|x64 = ReleaseAndSave|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA326492-8C5A-4706-8C1C-82B3F8D750FE}.Debug|x64.ActiveCfg = Debug|x64
+		{AA326492-8C5A-4706-8C1C-82B3F8D750FE}.Debug|x64.Build.0 = Debug|x64
+		{AA326492-8C5A-4706-8C1C-82B3F8D750FE}.Release|x64.ActiveCfg = Release|x64
+		{AA326492-8C5A-4706-8C1C-82B3F8D750FE}.Release|x64.Build.0 = Release|x64
+		{AA326492-8C5A-4706-8C1C-82B3F8D750FE}.ReleaseAndSave|x64.ActiveCfg = ReleaseAndSave|x64
+		{AA326492-8C5A-4706-8C1C-82B3F8D750FE}.ReleaseAndSave|x64.Build.0 = ReleaseAndSave|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9DB70846-19F1-48B8-B746-F5A8ABC142E8}
+	EndGlobalSection
+EndGlobal
