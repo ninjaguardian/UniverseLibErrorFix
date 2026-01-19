@@ -1,0 +1,9 @@
+{
+    "name": "UniverseLibErrorFix",
+    "version_number": "1.0.0",
+    "website_url": "https://github.com/ninjaguardian/UniverseLibErrorFix",
+    "description": "Fixes an error in UniverseLib.",
+    "dependencies": [
+        "LavaGang-MelonLoader-0.7.1"
+    ]
+}

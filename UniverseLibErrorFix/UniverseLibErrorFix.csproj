@@ -1,0 +1,87 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>disable</ImplicitUsings>
+		<Nullable>disable</Nullable>
+
+		<Company>$(Authors)</Company>
+		<Title>UniverseLibErrorFix</Title>
+		<Authors>ninjaguardian (github)</Authors>
+		<Description>Fixes an error in UniverseLib</Description>
+		<Copyright>Copyright © 2025 ninjaguardian (github), This work is dedicated to the public domain under CC0 1.0.</Copyright>
+		<PackageLicenseExpression>CC0-1.0</PackageLicenseExpression>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<ProduceReferenceAssembly>True</ProduceReferenceAssembly>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<RepositoryUrl>https://github.com/ninjaguardian/UniverseLibErrorFix</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<VersionPrefix>1.0.0</VersionPrefix>
+		<AssemblyVersion>$(VersionPrefix).0</AssemblyVersion>
+		<FileVersion>$(VersionPrefix).0</FileVersion>
+		<PackageIcon>icon.png</PackageIcon>
+		<Platform>x64</Platform>
+		<Platforms>x64</Platforms>
+		<PlatformTarget>x64</PlatformTarget>
+		<Prefer32Bit>False</Prefer32Bit>
+		<PackageProjectUrl>https://thunderstore.io/c/rumble/p/ninjaguardian/UniverseLibErrorFix</PackageProjectUrl>
+		<SelfContained>false</SelfContained>
+		<Optimize>True</Optimize>
+		<WarningLevel>9999</WarningLevel>
+		<IsPublishable>False</IsPublishable>
+		<Configurations>Debug;Release;ReleaseAndSave</Configurations>
+
+		<LibsDirPath>$(LIBSDIRPATH)</LibsDirPath>
+		<LibsDirPath Condition="'$(LibsDirPath)'==''">C:\Program Files (x86)\Steam\steamapps\common\RUMBLE</LibsDirPath>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)'=='Debug'">
+		<StartAction>Program</StartAction>
+		<StartProgram>$(LIBSDIRPATH)\RUMBLE.exe</StartProgram>
+		<StartWorkingDirectory>$(LIBSDIRPATH)</StartWorkingDirectory>
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+		<DefineConstants>DEBUG</DefineConstants>
+		<Optimize>False</Optimize>
+	</PropertyGroup>
+
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(Configuration)'=='Debug' Or '$(Configuration)'=='ReleaseAndSave'">
+		<Exec Command="copy /Y &quot;$(TargetPath)&quot; &quot;$(LIBSDIRPATH)\Mods\&quot;" />
+	</Target>
+
+	<ItemGroup>
+		<None Include="..\icon.png">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+		<None Include="..\CHANGELOG.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+		<None Include="..\README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+		<None Include="..\manifest.json">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+		<None Include="..\LICENSE.txt">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Reference Include="0Harmony">
+			<HintPath>$(LibsDirPath)\MelonLoader\net6\0Harmony.dll</HintPath>
+		</Reference>
+		<Reference Include="MelonLoader">
+			<HintPath>$(LibsDirPath)\MelonLoader\net6\MelonLoader.dll</HintPath>
+		</Reference>
+		<Reference Include="UniverseLib.ML.IL2CPP.Interop">
+			<HintPath>$(LibsDirPath)\UserLibs\UniverseLib.ML.IL2CPP.Interop.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+
+</Project>
